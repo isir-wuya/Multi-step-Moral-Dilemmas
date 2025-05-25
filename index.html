@@ -146,6 +146,27 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
       <br>
       <br>
 
+       <h2 class="title is-4">Consensus-Based Model Value Mapping</h2>
+    <p>To assign moral value dimensions to each action A<sub>i</sub> and B<sub>i</sub> in every step S<sub>i</sub>, we leverage two well-established moral frameworks: Moral Foundations Theory (MFT) and Schwartz’s Theory of Basic Human Values. Definitions and interpretations of all value dimensions are provided in Appendix A.</p>
+
+    <p>For each step S<sub>i</sub>, we determine a pair of value annotations V<sub>i</sub><sup>A</sup> and V<sub>i</sub><sup>B</sup>, ensuring that the two values correspond to distinct moral dimensions within the selected framework. To mitigate biases arising from single-model annotations and enhance the reliability of value attribution, we employ a consensus-based approach using three LLMs: GPT-4o-mini, GLM-4-Plus, and DeepSeek-V3.<sup><a href="#human_verification">1</a></sup></p>
+
+    <p>The value mapping process proceeds as follows:</p>
+    <ul>
+      <li><strong>Value Recognition</strong>: Each model independently maps the candidate actions A<sub>i</sub> and B<sub>i</sub> to their respective value dimensions, V<sub>i</sub><sup>A</sup> and V<sub>i</sub><sup>B</sup>. We prompt the models to use Chain-of-Thought (CoT) reasoning, encouraging them to analyze each decision from a first-person stakeholder perspective. This aligns with stakeholder-centric approaches discussed in prior work. Specifically, the models are required to articulate the expected consequences of each action, identify impacted stakeholders, and justify the associated moral value based on MFT or Schwartz’s value definitions.</li>
+
+      <li><strong>Consistency Check</strong>: If at least two out of the three models agree on the value assignment for an action, we adopt that value. In cases where all three models produce divergent labels, manual adjudication by human annotators is used to determine the most appropriate classification.</li>
+
+      <li><strong>Final Structure</strong>: After assigning values, each moral dilemma step is formally represented as a tuple including the context, dilemma, two actions, and their corresponding values:  
+        <br><code>S<sub>i</sub> = (Ctx<sub>i</sub>, D<sub>i</sub>, A<sub>i</sub>, B<sub>i</sub>, V<sub>i</sub><sup>A</sup>, V<sub>i</sub><sup>B</sup>)</code>,  
+        ensuring that V<sub>i</sub><sup>A</sup> ≠ V<sub>i</sub><sup>B</sup> and both are valid within the target moral framework.</li>
+    </ul>
+
+    <p>The statistics of the resulting dataset are shown in Table 1. <strong><em>Care</em></strong> and <strong><em>Benevolence</em></strong> are the most frequently assigned values across all LLMs, while <strong><em>Sanctity</em></strong>, <strong><em>Tradition</em></strong>, and <strong><em>Stimulation</em></strong> are least represented. Additionally, <strong><em>Liberty</em></strong>, <strong><em>Security</em></strong>, and <strong><em>Power</em></strong> exhibit notable judgment variation across different LLMs.</p>
+  </div>
+    <br>
+    <br>
+
       <!-- Finding 1 -->
       <div style="text-align:center">
         <h2 class="title is-4">Finding 1: LLMs maintain value orientations while flexibly adjusting preference strengths across dilemmas.</h2>
@@ -163,8 +184,9 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
      <div style="text-align:center">
         <h2 class="title is-4">Finding 2: Model preferences evolve dynamically with varying stability across dimensions.</h2>
        <div class="content has-text-justified"> 
-       <p>LLMs exhibit stable value directions while adjusting preference intensity. Using preference scores from -0.5 to +0.5, we find that models retain consistent positive/negative directions across five steps. Value priority is generally stable: care > fairness > sanctity > authority > liberty > loyalty. As dilemmas deepen, models adjust intensities: fairness rises (e.g., Gemini: +0.026 to +0.182), aversion to liberty weakens (GPT-4o: -0.232 to -0.164), and loyalty is more strongly rejected (GLM-4-Air: -0.232 to -0.314). Sanctity fluctuates most, often reversing direction (Claude: +0.02 to -0.083), while care remains remarkably stable (+0.13 to +0.24), suggesting harm prevention is a moral anchor.</p>
-        </div>
+       <p>We assess inter-model stability using Spearman’s rank correlation across reasoning steps in six moral dimensions. Liberty shows the highest and most consistent agreement, indicating strong convergence on autonomy-related judgments. Care and sanctity also display increasing consistency over time. In contrast, authority shows a marked decline in consistency, suggesting growing divergence among models. Fairness remains unstable, with models varying in its relative importance. Loyalty shows delayed but increasing agreement, reflecting gradual alignment under more intense dilemmas.
+         Based on ranking shifts, models can be grouped into three types. Highly volatile models (like Llama, Gemini, and DeepSeek) frequently change rankings across dimensions. Adaptive models (such as Qwen-plus and GLM-4-Plus) make targeted adjustments while maintaining overall stability. Stable models (Claude and GLM-4-Air) retain consistent value rankings across all steps. A similar pattern is observed under Schwartz’s value framework.</p>
+       </div>
        <div style="text-align:center">
          <figure>
           <img src="static/images/inter_mft.png" alt="Finding 2 illustration" style="width:100%;display:block;margin:0 auto;">
@@ -177,12 +199,8 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
         <h2 class="title is-4">Finding 3: LLMs do not rely on stable moral principles, but rather generate value preferences through
 context-driven statistical imitation.</h2>
         <div class="content has-text-justified"> 
-        <p>LLMs derive preferences from context rather than stable principles.</p>
-        <ul>
-          <li>Care dominates over loyalty (0.81) and liberty (0.71)</li>
-          <li>Ambiguous: care ≈ fairness (0.52)</li>
-          <li>Non-transitive reasoning in triads</li>
-        </ul>
+        <p>We analyzed the preference structures of large language models when facing moral dilemmas and found that while most models exhibit a degree of overall consistency, local intransitivities frequently emerge. For example, in DeepSeek, GPT-4o, and GLM-4-Air, models tend to prefer *care* over *sanctity* and *sanctity* over *fairness*, yet show nearly equal preference between *care* and *fairness* (win rates around 0.52–0.54). This creates a locally intransitive cycle that prevents a clear value hierarchy. Such patterns suggest that the models’ moral judgments are not guided by a stable internal value system, but are more likely shaped by context-driven trade-offs. The recurrence of these intransitivities across models highlights a fundamental limitation: current LLMs lack consistent and rational value orderings when navigating ethical conflicts.
+</p>
           </div>
         <div style="text-align:center">
         <figure>
