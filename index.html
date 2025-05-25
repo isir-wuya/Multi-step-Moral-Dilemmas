@@ -25,7 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Truth Decay in News Ecosystem</title>
+  <title>Multi-step Moral Dilemmas</title>
   <link rel="icon" type="image/x-icon" href="static/images/hbz-icon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -53,24 +53,34 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 id="Truth-Decay" class="title is-3 publication-title">LLM-Generated Fake News Induces Truth Decay in News Ecosystem: A Case Study on Neural News Recommendation
+            <h1 id="MMDs" class="title is-3 publication-title">The Staircase of Ethics: Probing LLM Value Priorities through Multi-Step Induction to Complex Moral Dilemmas
             </h1>
             <div class="is-size-5 publication-authors">
                 <!-- Paper authors -->
                 <span class="author-block">
-                  <a href="https://beanandrew.github.io/">Beizhe Hu<sup>1,2</sup></a>,</span>
+                  <a href="https://beanandrew.github.io/">Ya Wu<sup>1,2</sup></a>,</span>
   
                   <span class="author-block">
                   <a href="https://sheng-qiang.github.io/" target="_blank">Qiang Sheng<sup>1</sup></a>,</span>
   
                   <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=fSBdNg0AAAAJ&hl=zh-CN&oi=ao" target="_blank">Juan Cao<sup>1,2</sup></a>,</span>
-                  
-                  <span class="author-block">
-                  <a href="https://liesy.github.io/" target="_blank">Yang Li<sup>1,2</sup></a>,</span>
-  
-                  <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=DKCzZXsAAAAJ" target="_blank">Guang Yang<sup>3</sup></a>,</span>
+
+                   <span class="author-block">
                   <a href="https://scholar.google.com/citations?user=hGZwK0cAAAAJ&hl=en" target="_blank">Danding Wang<sup>1</sup></a>,</span>
+
+                   <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=sv7uxi4AAAAJ" target="_blank">YiFan Sun<sup>1,3</sup></a>,</span>
+
+                   <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=fMCBAt4AAAAJ" target="_blank">Zhengjia Wang<sup>1,2</sup></a>,</span>
+              
+                   <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=i9SLGsEAAAAJ" target="_blank">YuYan Bu<sup>1,2</sup></a>,</span>
+
+                  <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=fSBdNg0AAAAJ&hl=zh-CN&oi=ao" target="_blank">Juan Cao<sup>1,2</sup></a>,</span>
+              
                   </span>
                   
                   </div>
@@ -79,6 +89,7 @@
                   <span class="author-block">
                       <sup>1</sup>Institute of Computing Technology, Chinese Academy of Sciences<br>
                       <sup>2</sup>University of Chinese Academy of Sciences<br>
+                      <sup>3</sup>Zhongguancun Laboratory<br>
                     </span>
   
             </div>
@@ -145,7 +156,9 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Online fake news moderation now faces a new challenge brought by the malicious use of large language models (LLMs) in fake news production. Though existing works have shown LLM-generated fake news is hard to detect from an individual aspect, it remains underexplored how its large-scale release will impact the news ecosystem. In this study, we develop a simulation pipeline and a dataset with ~56k generated news of diverse types to investigate the effects of LLM-generated fake news within neural news recommendation systems. Our findings expose a truth decay phenomenon, where real news is gradually losing its advantageous position in news ranking against fake news as LLM-generated news is involved in news recommendation. We further provide an explanation about why truth decay occurs from a familiarity perspective and show the positive correlation between perplexity and news ranking. Finally, we discuss the threats of LLM-generated fake news and provide possible countermeasures. We urge stakeholders to address this emerging challenge to preserve the integrity of news ecosystems.</p>
+            <p>Ethical decision-making is a critical aspect of human judgment, and the growing use of LLMs in decision-support systems necessitates a rigorous evaluation of their moral reasoning capabilities.  However, existing assessments primarily rely on single-step evaluations, failing to capture how models adapt to evolving ethical challenges. Addressing this gap, we introduce the Multi-step Moral Dilemmas (MMDs), the first dataset specifically constructed to evaluate the evolving moral judgments of LLMs across 3,302 five-stage dilemmas. This framework enables a fine-grained, dynamic analysis of how LLMs adjust their moral reasoning across escalating dilemmas.  Our evaluation of nine widely used LLMs reveals that their value preferences shift significantly as dilemmas progress, indicating that models recalibrate moral judgments based on scenario complexity.
+Furthermore, pairwise value comparisons demonstrate that while LLMs often prioritize the value of care, this value can sometimes be superseded by fairness in certain contexts, highlighting the dynamic and context-dependent nature of LLM ethical reasoning.
+Our findings call for a shift toward dynamic, context-aware evaluation paradigms, paving the way for more human-aligned and value-sensitive development of LLMs.</p>
           </div>
         </div>
       </div>
