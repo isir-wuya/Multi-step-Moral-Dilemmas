@@ -157,7 +157,7 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
 </ul>
 
       
- <div style="text-align:center">
+ <div style="columns is-centered">
           <figure>
             <img src="static/images/consensus_dataset.png" alt="Figure 1" style="width:80%; display:block; margin:0 auto;">
           </figure>
@@ -170,13 +170,15 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
       <div style = "text-align:center">
       <p>To assess the value preferences of LLMs in dynamic moral dilemmas, we evaluated nine mainstream models, including DeepSeek-V3, GPT-4o, LLaMA-3-70B, GLM-4 (Air-0111 and Plus), Qwen-Plus, Mistral-Small-24B-Instruct-2501, Gemini-2.0-Flash, and Claude-3-5-Haiku—using our MMDs dataset. Our experimental design incorporates history-aware reasoning to simulate human-like moral dynamics, grounded in cumulative moral development theory.</p>  
       </div>
+      <br>
+      <br>
       <!-- Finding 1 -->
       <div style="text-align:center">
         <h2 class="title is-4">Finding 1: LLMs maintain value orientations while flexibly adjusting preference strengths across dilemmas.</h2>
         <div class="content has-text-justified">
          <p>LLMs exhibit stable value directions while adjusting preference intensity. Using preference scores from -0.5 to +0.5, we find that models retain consistent positive/negative directions across five steps. Value priority is generally stable: care > fairness > sanctity > authority > liberty > loyalty. As dilemmas deepen, models adjust intensities: fairness rises (e.g., Gemini: +0.026 to +0.182), aversion to liberty weakens (GPT-4o: -0.232 to -0.164), and loyalty is more strongly rejected (GLM-4-Air: -0.232 to -0.314). Sanctity fluctuates most, often reversing direction (Claude: +0.02 to -0.083), while care remains remarkably stable (+0.13 to +0.24), suggesting harm prevention is a moral anchor.</p>
           </div>
-        <div style="text-align:center">
+        <div style="columns is-centered">
         <figure>
           <img src="static/images/intra_mft.png" alt="Finding 1 illustration" style="width:100%;display:block;margin:0 auto;">
         </figure>
@@ -191,7 +193,7 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
        <p>We assess inter-model stability using Spearman’s rank correlation across reasoning steps in six moral dimensions. Liberty shows the highest and most consistent agreement, indicating strong convergence on autonomy-related judgments. Care and sanctity also display increasing consistency over time. In contrast, authority shows a marked decline in consistency, suggesting growing divergence among models. Fairness remains unstable, with models varying in its relative importance. Loyalty shows delayed but increasing agreement, reflecting gradual alignment under more intense dilemmas.</p>
          <p>Based on ranking shifts, models can be grouped into three types. Highly volatile models (like Llama, Gemini, and DeepSeek) frequently change rankings across dimensions. Adaptive models (such as Qwen-plus and GLM-4-Plus) make targeted adjustments while maintaining overall stability. Stable models (Claude and GLM-4-Air) retain consistent value rankings across all steps. A similar pattern is observed under Schwartz’s value framework.</p>
        </div>
-       <div style="text-align:center">
+       <div style="columns is-centered">
          <figure>
           <img src="static/images/inter_mft.png" alt="Finding 2 illustration" style="width:100%;display:block;margin:0 auto;">
         </figure>
@@ -207,7 +209,7 @@ context-driven statistical imitation.</h2>
         <p>We analyzed the preference structures of large language models when facing moral dilemmas and found that while most models exhibit a degree of overall consistency, local intransitivities frequently emerge. For example, in DeepSeek, GPT-4o, and GLM-4-Air, models tend to prefer care over sanctity and sanctity over fairness, yet show nearly equal preference between care and fairness (win rates around 0.52–0.54). This creates a locally intransitive cycle that prevents a clear value hierarchy. Such patterns suggest that the models’ moral judgments are not guided by a stable internal value system, but are more likely shaped by context-driven trade-offs. The recurrence of these intransitivities across models highlights a fundamental limitation: current LLMs lack consistent and rational value orderings when navigating ethical conflicts.
 </p>
           </div>
-        <div style="text-align:center">
+        <div style="columns is-centered">
         <figure>
           <img src="static/images/winrate_mft_1.jpg" alt="Finding 3 trade-off matrix" style="width:100%;display:block;margin:0 auto;">
         </figure>
