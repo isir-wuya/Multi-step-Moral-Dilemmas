@@ -144,8 +144,9 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
       </div>
       <br>
       <br>
-
-<h2 class="title is-4">Consensus-Based Model Value Mapping</h2>
+<div style="text-align:center">
+<h2 class="title is-3">Consensus-Based Model Value Mapping</h2>
+</div>
 <p>To label each action A<sub>i</sub> and B<sub>i</sub> in step S<sub>i</sub> with moral value dimensions, we adopt two established frameworks: Moral Foundations Theory (MFT) and Schwartz’s Basic Human Values.</p>
 
 <p>Each step receives a value pair (V<sub>i</sub><sup>A</sup>, V<sub>i</sub><sup>B</sup>), ensuring distinct moral dimensions. To reduce bias and improve reliability, we use a consensus-based annotation process with three LLMs: GPT-4o-mini, GLM-4-Plus, and DeepSeek-V3.</p>
@@ -154,6 +155,8 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
   <li><strong>Value Recognition</strong>: Each model independently assigns values using Chain-of-Thought reasoning from a first-person stakeholder view, based on MFT or Schwartz.</li>
   <li><strong>Consistency Check</strong>: If two models agree, we adopt the majority label; otherwise, human adjudicators resolve disagreements.</li>
 </ul>
+
+      
 <div class="columns is-centered">
           <figure>
             <img src="static/images/consensus_dataset.png" alt="Figure 1" style="width:100%; display:block; margin:0 auto;">
