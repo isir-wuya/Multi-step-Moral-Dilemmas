@@ -154,9 +154,11 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
   <li><strong>Value Recognition</strong>: Each model independently assigns values using Chain-of-Thought reasoning from a first-person stakeholder view, based on MFT or Schwartz.</li>
   <li><strong>Consistency Check</strong>: If two models agree, we adopt the majority label; otherwise, human adjudicators resolve disagreements.</li>
 </ul>
-
-<p>As shown in Table 1, <em>Care</em> and <em>Benevolence</em> dominate the value assignments. <em>Sanctity</em>, <em>Tradition</em>, and <em>Stimulation</em> are least frequent, while <em>Liberty</em>, <em>Security</em>, and <em>Power</em> show the most model disagreement.</p>
-
+<div class="columns is-centered">
+          <figure>
+            <img src="static/images/consensus_dataset.png" alt="Figure 1" style="width:100%; display:block; margin:0 auto;">
+          </figure>
+      </div>
   <br>
   <br>
 
@@ -172,13 +174,14 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
         </figure>
           </div>
       </div>
-
+<br>
+  <br>
       <!-- Finding 2 -->
      <div style="text-align:center">
         <h2 class="title is-4">Finding 2: Model preferences evolve dynamically with varying stability across dimensions.</h2>
        <div class="content has-text-justified"> 
-       <p>We assess inter-model stability using Spearman’s rank correlation across reasoning steps in six moral dimensions. Liberty shows the highest and most consistent agreement, indicating strong convergence on autonomy-related judgments. Care and sanctity also display increasing consistency over time. In contrast, authority shows a marked decline in consistency, suggesting growing divergence among models. Fairness remains unstable, with models varying in its relative importance. Loyalty shows delayed but increasing agreement, reflecting gradual alignment under more intense dilemmas.
-         Based on ranking shifts, models can be grouped into three types. Highly volatile models (like Llama, Gemini, and DeepSeek) frequently change rankings across dimensions. Adaptive models (such as Qwen-plus and GLM-4-Plus) make targeted adjustments while maintaining overall stability. Stable models (Claude and GLM-4-Air) retain consistent value rankings across all steps. A similar pattern is observed under Schwartz’s value framework.</p>
+       <p>We assess inter-model stability using Spearman’s rank correlation across reasoning steps in six moral dimensions. Liberty shows the highest and most consistent agreement, indicating strong convergence on autonomy-related judgments. Care and sanctity also display increasing consistency over time. In contrast, authority shows a marked decline in consistency, suggesting growing divergence among models. Fairness remains unstable, with models varying in its relative importance. Loyalty shows delayed but increasing agreement, reflecting gradual alignment under more intense dilemmas.</p>
+         <p>Based on ranking shifts, models can be grouped into three types. Highly volatile models (like Llama, Gemini, and DeepSeek) frequently change rankings across dimensions. Adaptive models (such as Qwen-plus and GLM-4-Plus) make targeted adjustments while maintaining overall stability. Stable models (Claude and GLM-4-Air) retain consistent value rankings across all steps. A similar pattern is observed under Schwartz’s value framework.</p>
        </div>
        <div style="text-align:center">
          <figure>
@@ -186,7 +189,8 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
         </figure>
          </div>
       </div>
-
+      <br>
+      <br>
       <!-- Finding 3 -->
       <div style="text-align:center">
         <h2 class="title is-4">Finding 3: LLMs do not rely on stable moral principles, but rather generate value preferences through
