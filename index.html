@@ -149,39 +149,46 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
       <!-- Finding 1 -->
       <div style="text-align:center">
         <h2 class="title is-4">Finding 1: LLMs maintain value orientations while flexibly adjusting preference strengths across dilemmas.</h2>
-        <p>LLMs maintain consistent value orientations while adjusting preference strengths.</p>
-        <ul>
-          <li>Stable preference directions (positive/negative) across steps</li>
-          <li>Typical priority: <strong>care > fairness > sanctity > authority > liberty > loyalty</strong></li>
-          <li>Care is the most stable; sanctity is the most volatile</li>
-        </ul>
+        <div class="content has-text-justified">
+         <p>LLMs exhibit stable value directions while adjusting preference intensity. Using preference scores from -0.5 to +0.5, we find that models retain consistent positive/negative directions across five steps. Value priority is generally stable: care > fairness > sanctity > authority > liberty > loyalty. As dilemmas deepen, models adjust intensities: fairness rises (e.g., Gemini: +0.026 to +0.182), aversion to liberty weakens (GPT-4o: -0.232 to -0.164), and loyalty is more strongly rejected (GLM-4-Air: -0.232 to -0.314). Sanctity fluctuates most, often reversing direction (Claude: +0.02 to -0.083), while care remains remarkably stable (+0.13 to +0.24), suggesting harm prevention is a moral anchor.</p>
+          </div>
+        <div style="text-align:center">
         <figure>
           <img src="static/images/intra_mft.png" alt="Finding 1 illustration" style="width:100%;display:block;margin:0 auto;">
         </figure>
+          </div>
       </div>
 
       <!-- Finding 2 -->
      <div style="text-align:center">
         <h2 class="title is-4">Finding 2: Model preferences evolve dynamically with varying stability across dimensions.</h2>
-        <p>LLMs exhibit stable value directions while adjusting preference intensity. Using preference scores from -0.5 to +0.5, we find that models retain consistent positive/negative directions across five steps. Value priority is generally stable: care > fairness > sanctity > authority > liberty > loyalty. As dilemmas deepen, models adjust intensities: fairness rises (e.g., Gemini: +0.026 to +0.182), aversion to liberty weakens (GPT-4o: -0.232 to -0.164), and loyalty is more strongly rejected (GLM-4-Air: -0.232 to -0.314). Sanctity fluctuates most, often reversing direction (Claude: +0.02 to -0.083), while care remains remarkably stable (+0.13 to +0.24), suggesting harm prevention is a moral anchor.</p>
-        <figure>
+       <div class="content has-text-justified"> 
+       <p>LLMs exhibit stable value directions while adjusting preference intensity. Using preference scores from -0.5 to +0.5, we find that models retain consistent positive/negative directions across five steps. Value priority is generally stable: care > fairness > sanctity > authority > liberty > loyalty. As dilemmas deepen, models adjust intensities: fairness rises (e.g., Gemini: +0.026 to +0.182), aversion to liberty weakens (GPT-4o: -0.232 to -0.164), and loyalty is more strongly rejected (GLM-4-Air: -0.232 to -0.314). Sanctity fluctuates most, often reversing direction (Claude: +0.02 to -0.083), while care remains remarkably stable (+0.13 to +0.24), suggesting harm prevention is a moral anchor.</p>
+        </div>
+       <div style="text-align:center">
+         <figure>
           <img src="static/images/inter_mft.png" alt="Finding 2 illustration" style="width:100%;display:block;margin:0 auto;">
         </figure>
+         </div>
       </div>
 
       <!-- Finding 3 -->
       <div style="text-align:center">
         <h2 class="title is-4">Finding 3: LLMs do not rely on stable moral principles, but rather generate value preferences through
 context-driven statistical imitation.</h2>
+        <div class="content has-text-justified"> 
         <p>LLMs derive preferences from context rather than stable principles.</p>
         <ul>
           <li>Care dominates over loyalty (0.81) and liberty (0.71)</li>
           <li>Ambiguous: care ≈ fairness (0.52)</li>
           <li>Non-transitive reasoning in triads</li>
         </ul>
+          </div>
+        <div style="text-align:center">
         <figure>
           <img src="static/images/winrate_mft_1.jpg" alt="Finding 3 trade-off matrix" style="width:100%;display:block;margin:0 auto;">
         </figure>
+          </div>
       </div>
 
       
