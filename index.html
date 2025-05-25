@@ -54,43 +54,6 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 id="MMDs" class="title is-3 publication-title">The Staircase of Ethics: Probing LLM Value Priorities through Multi-Step Induction to Complex Moral Dilemmas
-            </h1>
-            <div class="is-size-5 publication-authors">
-                <!-- Paper authors -->
-                <span class="author-block">Ya Wu<sup>1,2</sup></a>,</span>
-  
-                  <span class="author-block">
-                  <a href="https://sheng-qiang.github.io/" target="_blank">Qiang Sheng<sup>1</sup></a>,</span>
-  
-                  <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=DKCzZXsAAAAJ" target="_blank">Guang Yang<sup>3</sup></a>,</span>
-
-                   <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=hGZwK0cAAAAJ&hl=en" target="_blank">Danding Wang<sup>1</sup></a>,</span>
-
-                   <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=sv7uxi4AAAAJ" target="_blank">YiFan Sun<sup>1,3</sup></a>,</span>
-
-                   <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=fMCBAt4AAAAJ" target="_blank">Zhengjia Wang<sup>1,2</sup></a>,</span>
-              
-                   <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=i9SLGsEAAAAJ" target="_blank">YuYan Bu<sup>1,2</sup></a>,</span>
-
-                  <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=fSBdNg0AAAAJ&hl=zh-CN&oi=ao" target="_blank">Juan Cao<sup>1,2</sup></a>,</span>
-              
-                  </span>
-                  
-                  </div>
-                  
-                  <div class="is-size-5 publication-authors">
-                  <span class="author-block">
-                      <sup>1</sup>Institute of Computing Technology, Chinese Academy of Sciences<br>
-                      <sup>2</sup>University of Chinese Academy of Sciences<br>
-                      <sup>3</sup>Zhongguancun Laboratory<br>
-                    </span>
-  
             </div>
 
             <div class="column has-text-centered">
@@ -142,7 +105,7 @@
         <div class="column is-four-fifths">
           <div class="columns is-centered">
               <figure>
-                <img src="static/images/motivation.jpg" style="width:75%" alt="Figure 0">
+                <img src="static/images/motivation.jpg" style="width:110%" alt="Figure 0">
               </figure>
           </div>
         </div>
@@ -191,7 +154,7 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
       </div>
       <div class="columns is-centered">
           <figure>
-            <img src="static/images/framework.png" alt="Figure 1" style="width:60%; display:block; margin:0 auto;">
+            <img src="static/images/framework.jpg" alt="Figure 1" style="width:110%; display:block; margin:0 auto;">
           </figure>
       </div>
       <br>
@@ -340,6 +303,141 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
                   </div>
                 </div>
               </div>
+
+      <section class="section">
+  <div class="container is-max-desktop">
+    <!-- Findings Section -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Findings</h2>
+        
+        <!-- Finding 1 -->
+        <div class="finding-card">
+          <h3 class="finding-title">Finding 1: Stable Value Orientations with Flexible Adjustments</h3>
+          <div class="content">
+            <p>LLMs maintain consistent value orientations while flexibly adjusting preference strengths across dilemmas. Our analysis reveals:</p>
+            <ul>
+              <li>All models maintain initial preference directions (positive/negative) for each moral dimension throughout all five steps</li>
+              <li>The relative prioritization remains stable: <strong>care > fairness > sanctity > authority > liberty > loyalty</strong> for most models</li>
+              <li><strong>Care</strong> shows exceptional stability, while <strong>sanctity</strong> exhibits the greatest volatility</li>
+              <li>Preference intensity shifts systematically as dilemmas intensify (e.g., fairness becomes more prominent)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Finding 2 -->
+        <div class="finding-card">
+          <h3 class="finding-title">Finding 2: Dynamic Evolution with Dimension-Specific Stability</h3>
+          <div class="content">
+            <p>Model preferences evolve dynamically with varying stability across dimensions:</p>
+            
+            <div class="table-container">
+              <table class="table is-bordered is-striped">
+                <thead>
+                  <tr>
+                    <th>Dimension</th>
+                    <th>Consistency</th>
+                    <th>Trend</th>
+                    <th>Key Observations</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Liberty</strong></td>
+                    <td>High (ρ=0.98→1.00)</td>
+                    <td>Stable</td>
+                    <td>Rapid convergence on autonomy judgments</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Care</strong></td>
+                    <td>High (ρ=0.73→0.97)</td>
+                    <td>Increasing</td>
+                    <td>Strong stability in harm prevention</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Authority</strong></td>
+                    <td>High→Low (ρ=0.93→0.37)</td>
+                    <td>Decreasing</td>
+                    <td>Growing divergence in hierarchical judgments</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fairness</strong></td>
+                    <td>Medium (avg ρ=0.42)</td>
+                    <td>Volatile</td>
+                    <td>Agreement on importance but ranking varies</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <p>Models can be classified into three categories based on their stability patterns: <strong>Highly volatile</strong>, <strong>Adaptive</strong>, and <strong>Stable</strong> models.</p>
+          </div>
+        </div>
+
+        <!-- Finding 3 -->
+        <div class="finding-card">
+          <h3 class="finding-title">Finding 3: Context-Driven Moral Reasoning Without Stable Principles</h3>
+          <div class="content">
+            <p>LLMs don't rely on stable moral principles but generate value preferences through context-driven statistical imitation:</p>
+            
+            <div class="columns">
+              <div class="column">
+                <h4 class="title is-5">Key Patterns</h4>
+                <ul>
+                  <li><strong>Unambiguous trade-offs</strong>: Care strongly preferred over loyalty (0.81) and liberty (0.71)</li>
+                  <li><strong>Ambiguous trade-offs</strong>: Near-even preferences between care vs fairness (0.52)</li>
+                  <li><strong>Non-transitive judgments</strong>: Local intransitivity in value triads (care, sanctity, fairness)</li>
+                </ul>
+              </div>
+              <div class="column">
+                <h4 class="title is-5">Model-Specific Strategies</h4>
+                <ul>
+                  <li>Qwen-Plus/GLM-4-Air: Increase harm aversion in complex contexts</li>
+                  <li>LLaMA: Flexible reasoning across dimensions</li>
+                  <li>GPT-4o: Relative stability in value priorities</li>
+                  <li>DeepSeek/Gemini: Distinct rebalancing patterns</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="table-container">
+              <table class="table is-bordered is-striped">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Care > Sanctity</th>
+                    <th>Sanctity > Fairness</th>
+                    <th>Care ≈ Fairness</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>DeepSeek-V3</td>
+                    <td>0.59</td>
+                    <td>0.57</td>
+                    <td>0.52</td>
+                  </tr>
+                  <tr>
+                    <td>GPT-4o</td>
+                    <td>0.61</td>
+                    <td>0.56</td>
+                    <td>0.53</td>
+                  </tr>
+                  <tr>
+                    <td>GLM-4-Air</td>
+                    <td>0.66</td>
+                    <td>0.58</td>
+                    <td>0.54</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       
       
