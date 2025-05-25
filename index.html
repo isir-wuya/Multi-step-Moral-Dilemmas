@@ -146,7 +146,22 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
       <br>
       <br>
 
-       <h2 class="title is-4">Consensus-Based Model Value Mapping</h2>
+  <div style="text-align:center">
+    <h2 class="title is-3">Dataset Construction</h2>
+  </div>
+  <div class="content has-text-justified">
+    <br>
+    <p>Using GPT-4o, we generate structured dilemmas with five escalating steps (M = {S<sub>1</sub>, S<sub>2</sub>, ..., S<sub>5</sub>}), where each step S<sub>i</sub> (i ∈ {1,2,...,5}) is defined as:</p>
+
+    <p>The framework progresses through:</p>
+    <ol>
+      <li><strong>Step 1</strong>: Introduces a core moral conflict between two foundational values. For example, should one intervene to prevent immediate harm (potentially through violence), or avoid action and risk more severe outcomes?</li>
+      <li><strong>Steps 2–4</strong>: Gradually increase complexity by layering additional, intersecting moral tensions. Rather than altering surface context, these steps introduce new value conflicts, e.g., loyalty versus harm reduction, or justice versus security, transforming the dilemma from a binary trade-off into a multi-dimensional ethical problem.</li>
+      <li><strong>Step 5</strong>: Presents a high-stakes scenario requiring the model to navigate deeply conflicting principles. For instance, the model may face a choice between violating core ethical norms (e.g., using torture) for a perceived greater good, or maintaining moral integrity at significant cost.</li>
+    </ol>
+
+    <br>
+    <h4 class="title is-4">Consensus-Based Model Value Mapping</h4>
     <p>To assign moral value dimensions to each action A<sub>i</sub> and B<sub>i</sub> in every step S<sub>i</sub>, we leverage two well-established moral frameworks: Moral Foundations Theory (MFT) and Schwartz’s Theory of Basic Human Values. Definitions and interpretations of all value dimensions are provided in Appendix A.</p>
 
     <p>For each step S<sub>i</sub>, we determine a pair of value annotations V<sub>i</sub><sup>A</sup> and V<sub>i</sub><sup>B</sup>, ensuring that the two values correspond to distinct moral dimensions within the selected framework. To mitigate biases arising from single-model annotations and enhance the reliability of value attribution, we employ a consensus-based approach using three LLMs: GPT-4o-mini, GLM-4-Plus, and DeepSeek-V3.<sup><a href="#human_verification">1</a></sup></p>
@@ -164,8 +179,14 @@ Our findings call for a shift toward dynamic, context-aware evaluation paradigms
 
     <p>The statistics of the resulting dataset are shown in Table 1. <strong><em>Care</em></strong> and <strong><em>Benevolence</em></strong> are the most frequently assigned values across all LLMs, while <strong><em>Sanctity</em></strong>, <strong><em>Tradition</em></strong>, and <strong><em>Stimulation</em></strong> are least represented. Additionally, <strong><em>Liberty</em></strong>, <strong><em>Security</em></strong>, and <strong><em>Power</em></strong> exhibit notable judgment variation across different LLMs.</p>
   </div>
-    <br>
-    <br>
+
+  <div class="columns is-centered">
+    <figure>
+      <img src="static/images/framework.jpg" alt="Figure 1" style="width:110%; display:block; margin:0 auto;">
+    </figure>
+  </div>
+  <br>
+  <br>
 
       <!-- Finding 1 -->
       <div style="text-align:center">
